@@ -4,16 +4,18 @@ import { EffectComposer, Bloom } from '@react-three/postprocessing'
 import { FloatingIsland } from './FloatingIsland'
 import { VillageMarkers } from './VillageMarkers'
 import { BusinessMarkers } from './BusinessMarkers'
+import { CameraController } from './CameraController'
 import { Suspense } from 'react'
 import type { Village } from '../types'
 
 interface SceneProps {
   villages: Village[]
+  selectedVillage: Village | null
   filter: string
   onVillageSelect: (village: Village) => void
 }
 
-export function Scene({ villages, filter, onVillageSelect }: SceneProps) {
+export function Scene({ villages, selectedVillage, filter, onVillageSelect }: SceneProps) {
   return (
     <Canvas
       shadows
@@ -59,8 +61,11 @@ export function Scene({ villages, filter, onVillageSelect }: SceneProps) {
             />
           </EffectComposer>
 
+          <CameraController selectedVillage={selectedVillage} />
+
           {/* Controls */}
           <OrbitControls
+            makeDefault
             enablePan={true}
             enableZoom={true}
             enableRotate={true}

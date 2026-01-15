@@ -4,6 +4,7 @@ import { InfoModal } from './components/InfoModal'
 import { NewsTicker } from './components/NewsTicker'
 import { FilterBar } from './components/FilterBar'
 import type { FilterType } from './components/FilterBar'
+import { SearchBar } from './components/SearchBar'
 import { api } from './lib/api'
 import type { Village } from './types'
 
@@ -29,6 +30,7 @@ function App() {
       <div className="absolute inset-0 z-0">
         <Scene
           villages={villages}
+          selectedVillage={selectedVillage}
           filter={filter}
           onVillageSelect={handleVillageSelect}
         />
@@ -48,6 +50,8 @@ function App() {
         <h1 className="text-4xl text-gold font-heading drop-shadow-lg">Lefatshe la Bafokeng</h1>
         <p className="text-white/70 font-mono text-sm tracking-widest uppercase mt-2">Royal Bafokeng Nation</p>
       </div>
+
+      <SearchBar villages={villages} onSelect={handleVillageSelect} />
 
       <NewsTicker />
 
