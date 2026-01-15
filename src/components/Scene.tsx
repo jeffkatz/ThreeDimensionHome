@@ -6,12 +6,12 @@ import { VillageMarkers } from './VillageMarkers'
 import { BusinessMarkers } from './BusinessMarkers'
 import { CameraController } from './CameraController'
 import { Suspense } from 'react'
-import type { Village } from '../types'
+import type { Village, FilterType } from '../types'
 
 interface SceneProps {
   villages: Village[]
   selectedVillage: Village | null
-  filter: string
+  filter: FilterType
   onVillageSelect: (village: Village) => void
 }
 

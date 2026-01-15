@@ -3,10 +3,9 @@ import { Scene } from './components/Scene'
 import { InfoModal } from './components/InfoModal'
 import { NewsTicker } from './components/NewsTicker'
 import { FilterBar } from './components/FilterBar'
-import type { FilterType } from './components/FilterBar'
 import { SearchBar } from './components/SearchBar'
 import { api } from './lib/api'
-import type { Village } from './types'
+import type { Village, FilterType } from './types'
 
 function App() {
   const [villages, setVillages] = useState<Village[]>([])

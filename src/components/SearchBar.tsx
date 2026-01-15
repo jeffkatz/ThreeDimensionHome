@@ -27,6 +27,7 @@ export function SearchBar({ villages, onSelect }: SearchBarProps) {
         <input
           type="text"
           placeholder="Search villages..."
+          aria-label="Search villages"
           className="w-full bg-transparent border-none text-white px-4 py-3 focus:outline-none placeholder-white/50 font-body text-sm"
           value={query}
           onChange={(e) => setQuery(e.target.value)}

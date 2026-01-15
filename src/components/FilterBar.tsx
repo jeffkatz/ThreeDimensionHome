@@ -1,6 +1,5 @@
 import { Landmark, GraduationCap, Store, Globe } from 'lucide-react'
-
-export type FilterType = 'all' | 'history' | 'schools' | 'businesses'
+import type { FilterType } from '../types'
 
 interface FilterBarProps {
   currentFilter: FilterType
@@ -25,6 +24,7 @@ export function FilterBar({ currentFilter, onFilterChange }: FilterBarProps) {
             <button
               key={f.id}
               onClick={() => onFilterChange(f.id)}
+              aria-label={`Filter by ${f.label}`}
               className={`
                 flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-300
                 ${isActive ? 'bg-gold text-black font-bold' : 'text-white hover:bg-white/10'}

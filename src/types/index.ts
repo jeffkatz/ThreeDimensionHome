@@ -39,3 +39,5 @@ export interface News {
   category: 'Culture' | 'News' | 'Alerts'
   created_at: string
 }
+
+export type FilterType = 'all' | 'history' | 'schools' | 'businesses'

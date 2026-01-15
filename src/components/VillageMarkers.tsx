@@ -2,11 +2,11 @@ import { useRef, useState } from 'react'
 import { Html } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
 import { Mesh } from 'three'
-import type { Village } from '../types'
+import type { Village, FilterType } from '../types'
 
 interface VillageMarkerProps {
   village: Village
-  filter: string
+  filter: FilterType
   onSelect: (village: Village) => void
 }
 
@@ -76,7 +76,7 @@ function VillageMarker({ village, filter, onSelect }: VillageMarkerProps) {
 
 interface VillageMarkersProps {
   villages: Village[]
-  filter: string
+  filter: FilterType
   onSelect: (village: Village) => void
 }
 
